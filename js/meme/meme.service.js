@@ -114,38 +114,39 @@ function createMeme(id, url) {
     selectedLineIdx: 0,
     lines: [
       {
-        txt: '',
+        txt: 'hello',
         size: 30,
         align: 'center',
         color: 'white',
-        stroke: true,
+        stroke: 'black',
         font: 'Impact',
         pos: { x: gElCanvas.width / 2, y: 50 }
       },
       {
-        txt: '',
+        txt: 'hi',
         size: 30,
         align: 'center',
         color: 'white',
-        stroke: true,
+        stroke: 'black',
         font: 'Impact',
         pos: { x: gElCanvas.width / 2, y: gElCanvas.height - 50 }
+
       }
     ]
   }
-  console.log(gMeme.lines[0])
+  console.log(gMeme.lines[gMeme.selectedLineIdx])
 
 }
 
 function colorPicker(fontColor) {
   console.log("fontColor", fontColor)
-  console.log(gMeme.lines[0].color)
-  gMeme.lines[0].color = fontColor
-  console.log(gMeme.lines[0])
+  console.log(gMeme.lines[gMeme.selectedLineIdx].color)
+  gMeme.lines[gMeme.selectedLineIdx].color = fontColor
+  console.log(gMeme.lines[gMeme.selectedLineIdx])
 }
 
 function changeFontSize(num) {
-  gMeme.lines[0].size += num
+  gMeme.lines[gMeme.selectedLineIdx].size += num
 }
 
 // DOWNLOAD CANVAS
@@ -158,7 +159,21 @@ function getMeme() {
 }
 
 function lineText(textVal) {
-  gMeme.lines[0].txt = textVal
+  gMeme.lines[gMeme.selectedLineIdx].txt = textVal
 }
 
+function swichLines() {
+  if (gMeme.selectedLineIdx === 0) {
+    console.log(gMeme.selectedLineIdx)
+    gMeme.selectedLineIdx = 1
+    console.log('1')
+
+  }
+  else {
+    gMeme.selectedLineIdx = 0
+    console.log(gMeme.selectedLineIdx)
+    // console.log('0')
+
+  }
+}
 

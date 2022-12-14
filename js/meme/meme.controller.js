@@ -9,14 +9,15 @@ function onInit() {
 
 }
 
+let elInputText = document.querySelector('.input-text')
 
 function onAddText() {
   let elInputText = document.querySelector('.input-text')
   let textVal = elInputText.value
-  console.log(textVal)
-  console.log(gMeme.lines[0].txt)
+
   setLineText(textVal)
   renderMeme()
+  // elInputText.value = ''
 }
 function setLineText(textVal) {
   lineText(textVal)
@@ -36,20 +37,8 @@ function onChangeFontSize(num) {
   changeFontSize(num)
   renderMeme()
 }
-function changeFontSize(num) {
-  gMeme.lines[0].size += num
-}
-function onDecreaseFont() {
-  decreaseFont()
-  renderMeme()
-  console.log("decrease")
-}
-function decreaseFont() {
-  gMeme.lines[0].size--
-}
-function onIncreaseFont() {
-  console.log("increase")
-}
+
+
 function onColorPicker() {
   console.log('color picker')
   var elColor = document.querySelector('.font-color')
@@ -58,18 +47,29 @@ function onColorPicker() {
   console.log(fontColor)
   renderMeme()
 }
+function onSwitchLines() {
+  swichLines()
+  var meme = getMeme()
+  console.log(meme)
+  elInputText.value = meme.lines[meme.selectedLineIdx].txt
+
+}
+
 
 // DRAW TEXT
-function drawText(text, x, y) {
-  gCtx.lineWidth = 1
-  gCtx.strokeStyle = 'black'
-  gCtx.fillStyle = gMeme.lines[0].color
-  gCtx.font = `${gMeme.lines[0].size}px arial`;
-  console.log(gMeme.lines[0].size)
-  gCtx.textAlign = 'center'
-  gCtx.textBaseline = 'middle'
-  gCtx.fillText(text, x, y) // Draws (fills) a given text at the given (x, y) position.
-  gCtx.strokeText(text, x, y) // Draws (strokes) a given text at the given (x, y) position.
+function drawText() {
+  var meme = getMeme()
+  meme.lines.forEach((text, index) => {
+    console.log(meme.lines[index].txt)
+    gCtx.lineWidth = 1
+    gCtx.strokeStyle = meme.lines[index].stroke
+    gCtx.fillStyle = meme.lines[index].color
+    gCtx.font = `${meme.lines[index].size}px ${meme.lines[index].font}`;
+    gCtx.textAlign = meme.lines[index].align
+    gCtx.textBaseline = 'middle'
+    gCtx.fillText(meme.lines[index].txt, meme.lines[index].pos.x, meme.lines[index].pos.y)
+    gCtx.strokeText(meme.lines[index].txt, meme.lines[index].pos.x, meme.lines[index].pos.y)
+  })
 }
 
 //INPUT TEXT
@@ -86,12 +86,13 @@ function clearCanvas() {
 // RENDER MEME
 
 function renderMeme() {
+  var meme = getMeme()
   gCtx.beginPath()
   const elImg = new Image() // Create a new html img element
-  elImg.src = gMeme.selectedImgUrl
+  elImg.src = meme.selectedImgUrl
   elImg.onload = () => {
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText(gMeme.lines[0].txt, gMeme.lines[0].pos.x, gMeme.lines[0].pos.y)
+    drawText()
 
   }
 }
