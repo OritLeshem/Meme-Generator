@@ -1,0 +1,38 @@
+
+*{
+  box-sizing: border-box;
+}
+:root{
+  --color0:#1a73e8;
+  --color1:#5f6368;
+  --color2:#fff;
+
+}
+@font-face{
+  font-family: Poppins;
+  src: url(/fonts/Poppins-Regular.ttf);
+}
+body{
+  font-family: Poppins;
+}
+nav{
+background-color: var(--color0);
+color: var(--color2);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.logo{
+  padding-left: 50px;
+}
+ul{
+  display: flex;
+  justify-content: space-between;
+}
+li{
+  list-style-type: none;
+  padding-inline-end: 50px;
+}
+.gallery-container img{
+  width: 200px;
+}
