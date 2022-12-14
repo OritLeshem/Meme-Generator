@@ -1,43 +1,44 @@
 'use strict'
 let gElCanvas
 let gCtx
+let elInputText = document.querySelector('.input-text')
+
 
 function onInit() {
   gElCanvas = document.getElementById('my-canvas')
   gCtx = gElCanvas.getContext('2d')
   renderGallery()
-
 }
 
-let elInputText = document.querySelector('.input-text')
+// RENDER MEME
+
+function renderMeme() {
+  var meme = getMeme()
+  gCtx.beginPath()
+  const elImg = new Image() // Create a new html img element
+  elImg.src = meme.selectedImgUrl
+  elImg.onload = () => {
+    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+    drawText()
+
+  }
+}
 
 function onAddText() {
   let elInputText = document.querySelector('.input-text')
   let textVal = elInputText.value
-
   setLineText(textVal)
   renderMeme()
-  // elInputText.value = ''
 }
+
 function setLineText(textVal) {
   lineText(textVal)
 }
-
-// function drawImg() {
-//   gCtx.beginPath()
-//   const elImg = new Image() // Create a new html img element
-//   elImg.src = gMeme.selectedImgUrl
-//   elImg.onload = () => {
-//     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-
-//   }
-// }
 
 function onChangeFontSize(num) {
   changeFontSize(num)
   renderMeme()
 }
-
 
 function onColorPicker() {
   console.log('color picker')
@@ -47,12 +48,12 @@ function onColorPicker() {
   console.log(fontColor)
   renderMeme()
 }
+
 function onSwitchLines() {
   swichLines()
   var meme = getMeme()
   console.log(meme)
   elInputText.value = meme.lines[meme.selectedLineIdx].txt
-
 }
 
 
@@ -72,27 +73,8 @@ function drawText() {
   })
 }
 
-//INPUT TEXT
-
 
 // CLEAR CANVAS
 function clearCanvas() {
   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
-}
-
-
-
-
-// RENDER MEME
-
-function renderMeme() {
-  var meme = getMeme()
-  gCtx.beginPath()
-  const elImg = new Image() // Create a new html img element
-  elImg.src = meme.selectedImgUrl
-  elImg.onload = () => {
-    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-    drawText()
-
-  }
 }

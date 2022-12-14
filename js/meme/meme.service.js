@@ -4,13 +4,6 @@ let gSelectedImg = {}
 var gImgs
 var gMeme
 
-console.log("hello from canvasjs")
-gMeme = {
-  selectedImgId: 1,
-  selectedImgUrl: 'meme-imgs/1.jpg',
-  selectedLineIdx: 0,
-  lines: []
-}
 gImgs = [
   {
     id: 1,
@@ -114,7 +107,7 @@ function createMeme(id, url) {
     selectedLineIdx: 0,
     lines: [
       {
-        txt: 'hello',
+        txt: '',
         size: 30,
         align: 'center',
         color: 'white',
@@ -123,19 +116,23 @@ function createMeme(id, url) {
         pos: { x: gElCanvas.width / 2, y: 50 }
       },
       {
-        txt: 'hi',
+        txt: '',
         size: 30,
         align: 'center',
         color: 'white',
         stroke: 'black',
         font: 'Impact',
         pos: { x: gElCanvas.width / 2, y: gElCanvas.height - 50 }
-
       }
     ]
   }
-  console.log(gMeme.lines[gMeme.selectedLineIdx])
+}
 
+function getMeme() {
+  return gMeme
+}
+function lineText(textVal) {
+  gMeme.lines[gMeme.selectedLineIdx].txt = textVal
 }
 
 function colorPicker(fontColor) {
@@ -149,31 +146,21 @@ function changeFontSize(num) {
   gMeme.lines[gMeme.selectedLineIdx].size += num
 }
 
-// DOWNLOAD CANVAS
-function downloadCanvas(elLink) {
-  const data = gElCanvas.toDataURL()
-  elLink.href = data
-}
-function getMeme() {
-  return gMeme
-}
-
-function lineText(textVal) {
-  gMeme.lines[gMeme.selectedLineIdx].txt = textVal
-}
-
 function swichLines() {
   if (gMeme.selectedLineIdx === 0) {
     console.log(gMeme.selectedLineIdx)
     gMeme.selectedLineIdx = 1
     console.log('1')
-
   }
   else {
     gMeme.selectedLineIdx = 0
     console.log(gMeme.selectedLineIdx)
     // console.log('0')
-
   }
 }
 
+// DOWNLOAD CANVAS
+function downloadCanvas(elLink) {
+  const data = gElCanvas.toDataURL()
+  elLink.href = data
+}
