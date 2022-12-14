@@ -19,24 +19,38 @@ function renderGallery() {
 function onSelectedImg(imgId, imgUrl) {
   var images = getImages()
   var selectedImg = images.find(img => (img.id === imgId))
+  createMeme(imgId, imgUrl)
   gMeme.selectedImgId = selectedImg.id
   gMeme.selectedImgUrl = selectedImg.url
   console.log(gMeme.selectedImgUrl)
   renderMeme()
 }
 
-function drawImg() {
-  const elImg = new Image() // Create a new html img element
-  elImg.src = gMeme.selectedImgUrl
-  elImg.onload = () => {
-    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-  }
+function onAddText() {
+  let elInputText = document.querySelector('.input-text')
+  let textVal = elInputText.value
+  console.log(textVal)
+  console.log(gMeme.lines[0].txt)
+
+  gMeme.lines[0].txt = textVal
+  // drawText(textVal, pos.x, pos.y)
+  renderMeme()
 }
+
+
+// function drawImg() {
+//   gCtx.beginPath()
+//   const elImg = new Image() // Create a new html img element
+//   elImg.src = gMeme.selectedImgUrl
+//   elImg.onload = () => {
+//     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+
+//   }
+// }
 
 
 // DRAW TEXT
 function drawText(text, x, y) {
-  gCtx.beginPath()
   gCtx.lineWidth = 1
   gCtx.strokeStyle = 'black'
   gCtx.fillStyle = 'white'
@@ -48,14 +62,8 @@ function drawText(text, x, y) {
 }
 
 //INPUT TEXT
-function onAddText() {
-  let elInputText = document.querySelector('.input-text')
-  let textVal = elInputText.value
-  console.log(textVal)
-  var pos = { x: 150, y: 200 }
-  renderMeme(textVal, pos.x, pos.y)
 
-}
+
 // CLEAR CANVAS
 function clearCanvas() {
   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
@@ -66,7 +74,13 @@ function clearCanvas() {
 
 // RENDER MEME
 
-function renderMeme(textVal, x, y) {
-  // drawImg()
-  drawText(textVal, x, y)
+function renderMeme() {
+  gCtx.beginPath()
+  const elImg = new Image() // Create a new html img element
+  elImg.src = gMeme.selectedImgUrl
+  elImg.onload = () => {
+    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+    drawText(gMeme.lines[0].txt, gMeme.lines[0].pos.x, gMeme.lines[0].pos.y)
+
+  }
 }

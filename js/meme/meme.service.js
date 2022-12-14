@@ -107,12 +107,43 @@ gImgs = [
 function getImages() {
   return gImgs
 }
+function createMeme(id, url) {
+  gMeme = {
+    selectedImgId: id,
+    selectedImgUrl: url,
+    selectedLineIdx: 0,
+    lines: [
+      {
+        txt: '',
+        size: 30,
+        align: 'center',
+        color: 'white',
+        stroke: true,
+        font: 'Impact',
+        pos: { x: gElCanvas.width / 2, y: 50 }
+      },
+      {
+        txt: '',
+        size: 30,
+        align: 'center',
+        color: 'white',
+        stroke: true,
+        font: 'Impact',
+        pos: { x: gElCanvas.width / 2, y: gElCanvas.height - 50 }
+      }
+    ]
+  }
+  console.log(gMeme.lines[0])
+
+}
 // DOWNLOAD CANVAS
 function downloadCanvas(elLink) {
   const data = gElCanvas.toDataURL()
   elLink.href = data
 }
-
+function getMeme() {
+  return gMeme
+}
 
 
 
