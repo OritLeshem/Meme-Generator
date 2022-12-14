@@ -145,6 +145,8 @@ function getMeme() {
   return gMeme
 }
 
-
+function lineText(textVal) {
+  gMeme.lines[0].txt = textVal
+}
 
 

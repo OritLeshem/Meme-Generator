@@ -1,8 +1,8 @@
+'use strict'
 let gElCanvas
 let gCtx
 
 function onInit() {
-  console.log('hello from init')
   gElCanvas = document.getElementById('my-canvas')
   gCtx = gElCanvas.getContext('2d')
   renderGallery()
@@ -11,12 +11,12 @@ function onInit() {
 function renderGallery() {
   var imgs = getImages()
   var strHTML = imgs.map((img) => {
-    return `<div class="img-in-gallery" onclick="onSelectedImg(${img.id},'${img.url}')"><img  class="img-in-gallery"src="${img.url}"></div>`
+    return `<div class="img-in-gallery" onclick="onImgSelect(${img.id},'${img.url}')"><img  class="img-in-gallery"src="${img.url}"></div>`
   }).join('')
   document.querySelector('.gallery-container').innerHTML = strHTML
 }
 
-function onSelectedImg(imgId, imgUrl) {
+function onImgSelect(imgId, imgUrl) {
   var images = getImages()
   var selectedImg = images.find(img => (img.id === imgId))
   createMeme(imgId, imgUrl)
@@ -31,12 +31,12 @@ function onAddText() {
   let textVal = elInputText.value
   console.log(textVal)
   console.log(gMeme.lines[0].txt)
-
-  gMeme.lines[0].txt = textVal
-  // drawText(textVal, pos.x, pos.y)
+  setLineText(textVal)
   renderMeme()
 }
-
+function setLineText(textVal) {
+  lineText(textVal)
+}
 
 // function drawImg() {
 //   gCtx.beginPath()
