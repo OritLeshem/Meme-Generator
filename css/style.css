@@ -6,6 +6,9 @@
   --color0:#1a73e8;
   --color1:#5f6368;
   --color2:#fff;
+  --color3:#d8d8d8;
+
+  
 
 }
 @font-face{
@@ -33,6 +36,31 @@ li{
   list-style-type: none;
   padding-inline-end: 50px;
 }
-.gallery-container img{
-  width: 200px;
+.gallery-container{
+  
+    
+    display: flex;
+    grid-template-columns: repeat(auto-fit, 150px);
+  
+    gap:10px;
+   
+  
+}
+.img-in-gallery{
+  
+ 
+  width: 150px;
+  
+
+  
+}
+/*CANVAS*/
+.canvas-container{
+  background-color: rgb(157, 154, 154);
+}
+canvas{
+display: block;
+margin:0 auto;
+max-width: 98vw;
+  background-color: rgb(209, 206, 206);
 }
