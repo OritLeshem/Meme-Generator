@@ -136,6 +136,18 @@ function createMeme(id, url) {
   console.log(gMeme.lines[0])
 
 }
+
+function colorPicker(fontColor) {
+  console.log("fontColor", fontColor)
+  console.log(gMeme.lines[0].color)
+  gMeme.lines[0].color = fontColor
+  console.log(gMeme.lines[0])
+}
+
+function changeFontSize(num) {
+  gMeme.lines[0].size += num
+}
+
 // DOWNLOAD CANVAS
 function downloadCanvas(elLink) {
   const data = gElCanvas.toDataURL()

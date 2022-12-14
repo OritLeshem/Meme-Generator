@@ -31,6 +31,25 @@ function setLineText(textVal) {
 
 //   }
 // }
+
+function onChangeFontSize(num) {
+  changeFontSize(num)
+  renderMeme()
+}
+function changeFontSize(num) {
+  gMeme.lines[0].size += num
+}
+function onDecreaseFont() {
+  decreaseFont()
+  renderMeme()
+  console.log("decrease")
+}
+function decreaseFont() {
+  gMeme.lines[0].size--
+}
+function onIncreaseFont() {
+  console.log("increase")
+}
 function onColorPicker() {
   console.log('color picker')
   var elColor = document.querySelector('.font-color')
@@ -39,20 +58,14 @@ function onColorPicker() {
   console.log(fontColor)
   renderMeme()
 }
-function colorPicker(fontColor) {
-  console.log("fontColor", fontColor)
-  console.log(gMeme.lines[0].color)
-  gMeme.lines[0].color = fontColor
-  console.log(gMeme.lines[0])
 
-
-}
 // DRAW TEXT
 function drawText(text, x, y) {
   gCtx.lineWidth = 1
   gCtx.strokeStyle = 'black'
   gCtx.fillStyle = gMeme.lines[0].color
-  gCtx.font = "50px arial";
+  gCtx.font = `${gMeme.lines[0].size}px arial`;
+  console.log(gMeme.lines[0].size)
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'middle'
   gCtx.fillText(text, x, y) // Draws (fills) a given text at the given (x, y) position.
