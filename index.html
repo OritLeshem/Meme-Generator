@@ -10,43 +10,80 @@
   <title>Meme-Generator</title>
 </head>
 
-<body onload="onInit()">
+<body class="main-layout full" onload="onInit()">
   <!-- GALLERY ------------------------------------->
-
-  <nav>
-    <h2 class="logo">logo</h2>
-    <ul>
-      <li>Create Memes</li>
-      <li>Saved Memes</li>
-    </ul>
-  </nav>
-  <div class="gallery-container"></div>
+  <header class=" main-layout full">
+    <nav class=" main-layout full">
+      <h2 class=" logo">logo</h2>
+      <ul>
+        <li>Create Memes</li>
+        <li>Saved Memes</li>
+      </ul>
+    </nav>
+  </header>
+  <div class="gallery-container main-layout"></div>
 
 
 
   <!-- MEME ----------------------------------------->
   <div class="meme-container">
-    <!-- FILTERS -------------------------------------->
-    <input class="input-text" type="text">
-    <button onclick="onAddText()">+</button>
-    <input class="font-color" type="color" id="color" name="color" value="#ffffff" oninput="onColorPicker()" />
-    <button onclick="onChangeFontSize(-2)">-A</button>
-    <button onclick="onChangeFontSize(2)">+A</button>
-    <button onclick="onSwitchLines()">switch</button>
-    <button>Save</button>
-    <button onclick="clearCanvas()">Clear</button>
-    <button onclick="drawText('hello',150,150)">addtext</button>
-    <button>Upload pic</button>
-    <button onclick="clearCanvas()">Clear</button>
-    <a href="#" onclick="downloadCanvas(this)" download="my-img">Download</a>
-
-
     <!-- CANVAS --------------------------------------->
 
     <div class="canvas-container">
       <canvas id="my-canvas" height="600" width="600"></canvas>
     </div>
+    <!-- CONTROL BOX -------------------------------------->
+    <div class="control-box">
+      <!-- FIRST ROW  INPUT|  -------------------------------------->
+      <div class="input-grid">
+        <input class="input-text" type="text">
+      </div>
+
+      <!-- SECOND ROW  +| DOWN| UP|SWITCH| DELETE -------------------------------------->
+      <div class="input-move-grid">
+        <button class="controller" onclick="onAddText()">+</button>
+        <button class="controller" onclick="onSwitchLines()"> <img class="icons"
+            src="./icons/icons8-up-down-arrow-50.png" alt="" /></button>
+
+        <button class="controller" onclick="onSwitchLines()">
+          <img class="icons" src="./icons/icons8-garbage-can-91.png" alt="" />
+        </button>
+      </div>
+      <!-- THIRD ROW  A+| A-| LEFT| RIGHT|CENTER -------------------------------------->
+      <div class=" font-grid">
+        <button class="controller font-controller" onclick="onChangeFontSize(-3)">-A</button>
+        <button class="controller font-controller" onclick="onChangeFontSize(3)">+A</button>
+        <button class="controller font-controller"><img class="icons" src="./icons/icons8-align-left.png"
+            alt=""></button>
+        <button class="controller font-controller"><img class="icons" src="./icons/icons8-align-right-40.png"
+            alt=""></button>
+        <button class="controller font-controller"><img class="icons" src="./icons/icons8-align-center-40.png"
+            alt=""></button>
+      </div>
+      <!-- FORTH ROW  FONT PICKER| A| COLOR PICKER -------------------------------------->
+      <div class="font-picker-grid">
+        <select class="pick-font " onchange="onSetFont(this.value)">
+          <option data-trans="impact" value="impact">IMPACT</option>
+          <option data-trans="ariel" value="ariel">ARIEL</option>
+        </select>
+        <input class="controller font-color" type="color" id="color" name="color" value="#ffffff"
+          oninput="onColorPicker()" />
+        <button class="controller" onclick="onChangeFontSize(3)">+A</button>
+      </div>
+
+      <!-- FIFTH ROW  SAVE |SHARE| CLEAR-------------------------------------->
+      <div class="share-grid">
+        <button class="controller">Save</button>
+        <button class="controller" onclick="clearCanvas()">Clear</button>
+        <button class="controller">Upload pic</button>
+        <button class="controller" onclick="clearCanvas()">Clear</button>
+        <a href="#" class="controller" onclick="downloadCanvas(this)" download="my-img">Download</a>
+      </div>
+    </div>
+
+
   </div>
+  <footer class=" footer-container main-layout full"> Orit Leshem</footer>
   <script src="./js/meme/meme.service.js"></script>
   <script src="./js/meme/meme.controller.js"></script>
   <script src="./js/gallery//gallery.controller.js"></script>
