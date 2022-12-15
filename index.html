@@ -30,13 +30,13 @@
     <!-- CANVAS --------------------------------------->
 
     <div class="canvas-container">
-      <canvas id="my-canvas" height="600" width="600"></canvas>
+      <canvas id="my-canvas" height="600" width="600" onClick="onPos(event)"></canvas>
     </div>
     <!-- CONTROL BOX -------------------------------------->
     <div class="control-box">
       <!-- FIRST ROW  INPUT|  -------------------------------------->
       <div class="input-grid">
-        <input class="input-text" type="text">
+        <input class="input-text" type="text" placeholder="Text Here" oninput="onAddText()">
       </div>
 
       <!-- SECOND ROW  +| DOWN| UP|SWITCH| DELETE -------------------------------------->
@@ -75,9 +75,11 @@
       <div class="share-grid">
         <button class="controller">Save</button>
         <button class="controller" onclick="clearCanvas()">Clear</button>
-        <button class="controller">Upload pic</button>
-        <button class="controller" onclick="clearCanvas()">Clear</button>
+        <button class="controller" onclick="onUploadImg()">Upload to server</button>
+        <button class="controller" onclick="onUploadImg()">SHARE</button>
         <a href="#" class="controller" onclick="downloadCanvas(this)" download="my-img">Download</a>
+        <button><input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+        </button>
       </div>
     </div>
 
@@ -87,6 +89,7 @@
   <script src="./js/meme/meme.service.js"></script>
   <script src="./js/meme/meme.controller.js"></script>
   <script src="./js/gallery//gallery.controller.js"></script>
+  <script src="./js/meme/drag-text.js"></script>
 </body>
 
 </html>

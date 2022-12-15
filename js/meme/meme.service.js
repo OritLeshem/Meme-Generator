@@ -108,12 +108,14 @@ function createMeme(id, url) {
     lines: [
       {
         txt: '',
+
         size: 30,
         align: 'center',
         color: 'white',
         stroke: 'black',
         font: 'Impact',
-        pos: { x: gElCanvas.width / 2, y: 50 }
+        pos: { x: gElCanvas.width / 2, y: 50 },
+        isDrag: false
       },
       {
         txt: '',
@@ -148,13 +150,12 @@ function changeFontSize(num) {
 
 function swichLines() {
   if (gMeme.selectedLineIdx === 0) {
-    console.log(gMeme.selectedLineIdx)
+    // console.log(gMeme.selectedLineIdx)
     gMeme.selectedLineIdx = 1
-    console.log('1')
+    // console.log('1')
   }
   else {
     gMeme.selectedLineIdx = 0
-    console.log(gMeme.selectedLineIdx)
     // console.log('0')
   }
 }
@@ -163,4 +164,16 @@ function swichLines() {
 function downloadCanvas(elLink) {
   const data = gElCanvas.toDataURL()
   elLink.href = data
+}
+
+function doUploadImg(imgDataUrl, onSuccess) {
+  const formData = new FormData()
+  formData.append('img', imgDataUrl)
+  console.log('formData:', formData)
+  fetch('//ca-upload.com/here/upload.php', { method: 'POST', body: formData })
+    .then(res => res.text())
+    .then(url => {
+      console.log('url:', url)
+      onSuccess(url)
+    })
 }

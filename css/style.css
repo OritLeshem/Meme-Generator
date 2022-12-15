@@ -57,6 +57,9 @@ li{
 }
 .meme-container{
   background-color: rgb(50, 171, 246,0.3);
+  
+  max-width: 80vw;
+  margin: 100px auto;
   display: grid;
   grid-template-columns: repeat(2, 50vw);
 
@@ -66,6 +69,9 @@ li{
   background-color: rgb(90, 100, 234);
   width: 350px;
   margin: 0 auto;
+  border-radius: 15px;
+  /* margin: 20px; */
+
   
 
 }
@@ -142,12 +148,14 @@ height: 60px;
 /*CANVAS*/
 .canvas-container{
   /* background-color: rgb(157, 154, 154); */
-  margin-bottom: 100px;
+  margin: 100px;
+  width: 600px;
 }
 canvas{
 display: block;
 margin:0 auto;
-max-width: 98vw;
+max-width: 50vw;
+
   background-color: rgb(209, 206, 206);
 }
 

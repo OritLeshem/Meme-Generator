@@ -14,6 +14,5 @@ function onImgSelect(imgId, imgUrl) {
   createMeme(imgId, imgUrl)
   gMeme.selectedImgId = selectedImg.id
   gMeme.selectedImgUrl = selectedImg.url
-  console.log(gMeme.selectedImgUrl)
   renderMeme()
 }
