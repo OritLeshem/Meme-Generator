@@ -18,16 +18,29 @@ function addListeners() {
   renderMeme()
 }
 
+// function isTextClicked(clickedPos) {
+//   const pos = {}
+//   var gText = gMeme.lines[gMeme.selectedLineIdx]
+//   pos.x = gText.pos.x
+//   pos.y = gText.pos.y
+//   if ((Math.abs(clickedPos.x - pos.x) <= 50) && (Math.abs(clickedPos.y - pos.y) <= 25)) {
+//     gIsDrag = true
+//     return true
+//   }
+//   else return false
+
+// }
 function isTextClicked(clickedPos) {
-  const pos = {}
-  var gText = gMeme.lines[gMeme.selectedLineIdx]
-  pos.x = gText.pos.x
-  pos.y = gText.pos.y
-  if ((Math.abs(clickedPos.x - pos.x) <= 50) && (Math.abs(clickedPos.y - pos.y) <= 25)) {
+  // const pos = {}
+  var elGtext = {}
+  elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 50) && (Math.abs(clickedPos.y - el.pos.y) <= 25)))
+
+  console.log(elGtext)
+  if (elGtext >= 0) {
+    gMeme.selectedLineIdx = elGtext
     gIsDrag = true
     return true
-  }
-  else return false
+  } else return false
 
 }
 

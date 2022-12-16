@@ -36,14 +36,12 @@ nav ul li a:hover{
   color:var(--ghover-border);
 }
 .btn-link{
-  font-size: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: transparent;
-  border: none;
-  color:white;
-  margin-left: 1rem;
+  
 }
 .search-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding-top: 3rem;
   height: 10rem;
   text-align: center;

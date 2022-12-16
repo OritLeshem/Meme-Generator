@@ -50,7 +50,7 @@
   display: none;
   grid-template-columns: repeat(auto-fit, 180px);
   gap:30px;
-  margin:50px;
+  padding-top: 50px;
 }
 .gallery-saved-img{
   width: 180px;
