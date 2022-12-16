@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+}
+.main-layout > *:not(.full) {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  margin:0;
+  background-color:var(--color1);
+}
+:root{
+  --color1:#5f6368;
+  --color2:#ffffff;
+  --color3:#d8d8d8;
+  --gbgc: rgba(0,0,0,0.4);
+  --gborder: .4rem solid black;
+  --gbradius:.5rem;
+  --gtransition: all .07s ease;
+  --gcolor: white;
+  --gshadow:0 0 .5rem black;
+  --ghover-border:#ffc600;
+  --gbox-shadow: 0 0 1rem #ffc600;
+  --gtransform:scale(1.1);
+}

@@ -1,0 +1,23 @@
+.footer-container{
+  background-color:var(--color3);
+  padding:2rem;
+  width:100vw;
+  position:fixed;
+  bottom: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  }
+  @media (max-width:1000px){
+
+    
+.footer-container{
+  margin-top: 20px;
+  background-color:var(--color3);
+  padding:1rem;
+}
+} 
+    
+    
+    
+    

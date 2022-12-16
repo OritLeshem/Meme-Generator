@@ -1,0 +1,43 @@
+@font-face{
+  font-family: Poppins;
+  src: url(/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family:fa ;
+  src: url(/fa/fa-solid-900.ttf);
+}
+.fa{
+  font-family: fa;
+  font-size: 1rem;
+  padding: 3px;
+}
+.arrow::before{
+  content: "\f07d";
+}
+.trash::before{
+  content: "\f1f8";
+}
+.align-right::before{
+  content: "\f038";
+}
+.align-center::before{
+  content: "\f037";
+}
+.align-left::before{
+  content: "\f036";
+}
+.save::before{
+  content: "\f0c7";
+}
+.download::before{
+  content: "\f019";
+}
+.upload::before{
+  content: "\f093";
+}
+.share::before{
+  content: "\f064";
+}
+.file::before{
+  content: "\f15b";
+}
