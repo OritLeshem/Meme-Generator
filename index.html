@@ -46,7 +46,7 @@
 
       <!-- SECOND ROW  +| DOWN| UP|SWITCH| DELETE -------------------------------------->
       <div class="input-move">
-        <button class="controller" onclick="onAddText()">+</button>
+        <button class="controller" onclick="onAddText(1)">+</button>
         <button class="controller fa arrow" onclick="onSwitchLines()"></button>
         <button class="controller fa trash" onclick="clearCanvas()"></button>
       </div>
@@ -54,9 +54,9 @@
       <div class=" font-container">
         <button class="controller font-controller" onclick="onChangeFontSize(-3)">-A</button>
         <button class="controller font-controller" onclick="onChangeFontSize(3)">+A</button>
-        <button class="controller font-controller fa align-left"></button>
-        <button class="controller font-controller fa align-right"></button>
-        <button class="controller font-controller fa align-center"></button>
+        <button class="controller font-controller fa align-left" onclick="onChangeAlign('left')"></button>
+        <button class="controller font-controller fa align-right" onclick="onChangeAlign('right')"></button>
+        <button class="controller font-controller fa align-center" onclick="onChangeAlign('center')"></button>
       </div>
       <!-- FORTH ROW  FONT PICKER| A| COLOR PICKER -------------------------------------->
       <div class="font-picker-container ">

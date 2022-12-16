@@ -108,7 +108,6 @@ function createMeme(id, url) {
     lines: [
       {
         txt: 'hello',
-
         size: 30,
         align: 'center',
         color: 'white',
@@ -140,16 +139,20 @@ function gText() {
 function lineText(textVal) {
   gMeme.lines[gMeme.selectedLineIdx].txt = textVal
 }
-
 function colorPicker(fontColor) {
   console.log("fontColor", fontColor)
   console.log(gMeme.lines[gMeme.selectedLineIdx].color)
   gMeme.lines[gMeme.selectedLineIdx].color = fontColor
   console.log(gMeme.lines[gMeme.selectedLineIdx])
 }
-
 function changeFontSize(num) {
   gMeme.lines[gMeme.selectedLineIdx].size += num
+}
+function changeAlign(side) {
+  gMeme.lines[gMeme.selectedLineIdx].align = side
+}
+function setFont(elFontPicker) {
+  gMeme.lines[gMeme.selectedLineIdx].font = elFontPicker.value
 }
 
 function swichLines() {

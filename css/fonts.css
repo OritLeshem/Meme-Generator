@@ -18,13 +18,13 @@
   content: "\f1f8";
 }
 .align-right::before{
-  content: "\f038";
+  content: "\f036";
 }
 .align-center::before{
   content: "\f037";
 }
 .align-left::before{
-  content: "\f036";
+  content: "\f038";
 }
 .save::before{
   content: "\f0c7";

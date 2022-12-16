@@ -12,45 +12,22 @@ function onInit() {
   gCtx = gElCanvas.getContext('2d')
   renderGallery()
   addListeners()
-
-
 }
-
-
-// function addListeners() {
-//   addMouseListeners()
-//   addTouchListeners()
-//   //Listen for resize ev
-
-// }
-
-// window.addEventListener('resize', () => {
-//   renderMeme()
-
-// resizeCanvas()
-//   renderGallery()
-
-// })
-//1
-function onImgInput(ev) {
-  loadImageFromInput(ev, renderImg)
-}
-//2
-function loadImageFromInput(ev, onImageReady) {
-  const reader = new FileReader()
-  reader.onload = (event) => {
-    let img = new Image()
-    img.src = event.target.result
-    img.onload = () => onImageReady(img)
+function renderMeme() {
+  var meme = getMeme()
+  gCtx.beginPath()
+  const elImg = new Image() // Create a new html img element
+  elImg.src = meme.selectedImgUrl
+  elImg.onload = () => {
+    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+    drawText()
   }
-
-  reader.readAsDataURL(ev.target.files[0])
-
 }
 
-// function renderImg(img) {
-//   gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-// }
+
+
+
+
 
 
 
@@ -70,34 +47,19 @@ function onUploadImg() {
 
 
 
-// function resizeCanvas() {
-//   const elContainer = document.querySelector('.canvas-container')
-//   // Note: changing the canvas dimension this way clears the canvas
-//   gElCanvas.width = elContainer.offsetWidth - 20
-//   // Unless needed, better keep height fixed.
-//   // gElCanvas.height = elContainer.offsetHeight
-// }
-// RENDER MEME
-
-function renderMeme() {
-  var meme = getMeme()
-  gCtx.beginPath()
-  const elImg = new Image() // Create a new html img element
-  elImg.src = meme.selectedImgUrl
-  elImg.onload = () => {
-    gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-
-    drawText()
 
 
 
-  }
-}
-
-function onAddText() {
+function onAddText(fromButtonAdd) {
   let elInputText = document.querySelector('.input-text')
   let textVal = elInputText.value
+  console.log(fromButtonAdd)
   setLineText(textVal)
+  if (fromButtonAdd) elInputText.value = ''
+  renderMeme()
+}
+function onSetFont(elFontPicker) {
+  setFont(elFontPicker)
   renderMeme()
 
 }
@@ -111,6 +73,10 @@ function onChangeFontSize(num) {
   renderMeme()
 }
 
+function onChangeAlign(side) {
+  changeAlign(side)
+  renderMeme()
+}
 function onColorPicker() {
   console.log('color picker')
   var elColor = document.querySelector('.font-color')
@@ -148,23 +114,36 @@ function drawText() {
 
 }
 
+function onImgInput(ev) {
+  loadImageFromInput(ev, renderImg)
+}
+
+function loadImageFromInput(ev, onImageReady) {
+  const reader = new FileReader()
+  reader.onload = (event) => {
+    let img = new Image()
+    img.src = event.target.result
+    img.onload = () => onImageReady(img)
+  }
+  reader.readAsDataURL(ev.target.files[0])
+}
 
 // CLEAR CANVAS
 function clearCanvas() {
   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function drawRect(x, y) {
-  gCtx.beginPath()
-  // gCtx.rect(x, y, 150, 150)
-  // gCtx.strokeStyle = 'black'
-  // gCtx.stroke()
-  // gCtx.fillStyle = 'orange'
-  // gCtx.fill()
 
-  // Second way - using the built in .fillRect() and .strokeRect() methods to directly
-  // paint on the canvas, without using a path
+// function resizeCanvas() {
+//   const elContainer = document.querySelector('.canvas-container')
+//   // Note: changing the canvas dimension this way clears the canvas
+//   gElCanvas.width = elContainer.offsetWidth - 20
+//   // Unless needed, better keep height fixed.
+//   // gElCanvas.height = elContainer.offsetHeight
+// }
 
-  // gCtx.strokeStyle 
-  gCtx.strokeRect(x, y, 250, 150)
-}
+// window.addEventListener('resize', () => {
+//   renderMeme()
+// resizeCanvas()
+//   renderGallery()
+// })
