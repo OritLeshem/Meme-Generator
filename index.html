@@ -12,12 +12,12 @@
 
 <body class="main-layout full" onload="onInit()">
   <!-- GALLERY ------------------------------------->
-  <header class=" main-layout full">
-    <nav class=" main-layout full">
+  <header class="main-layout full">
+    <nav>
       <h2 class=" logo">logo</h2>
       <ul>
-        <li>Create Memes</li>
-        <li>Saved Memes</li>
+        <li><a class="link" href="">About</a> </li>
+        <li><a class="link" href="">Saved</a> </li>
       </ul>
     </nav>
   </header>
@@ -29,11 +29,11 @@
   <div class="meme-container">
     <!-- CANVAS --------------------------------------->
 
-    <div class="canvas-container">
-      <canvas id="my-canvas" height="600" width="600" onClick="onPos(event)"></canvas>
+    <div class="canvas-container" hidden>
+      <canvas id="my-canvas" height="600" width="600"></canvas>
     </div>
     <!-- CONTROL BOX -------------------------------------->
-    <div class="control-box">
+    <div class="control-box" hidden>
       <!-- FIRST ROW  INPUT|  -------------------------------------->
       <div class="input-grid">
         <input class="input-text" type="text" placeholder="Text Here" oninput="onAddText()">
@@ -88,8 +88,9 @@
   <footer class=" footer-container main-layout full"> Orit Leshem</footer>
   <script src="./js/meme/meme.service.js"></script>
   <script src="./js/meme/meme.controller.js"></script>
-  <script src="./js/gallery//gallery.controller.js"></script>
   <script src="./js/meme/drag-text.js"></script>
+  <script src="./js/gallery//gallery.controller.js"></script>
+
 </body>
 
 </html>

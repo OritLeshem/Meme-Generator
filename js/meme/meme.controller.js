@@ -2,6 +2,8 @@
 let gElCanvas
 let gCtx
 let elInputText = document.querySelector('.input-text')
+gElCanvas = document.getElementById('my-canvas')
+gCtx = gElCanvas.getContext('2d')
 
 
 function onInit() {
@@ -9,9 +11,19 @@ function onInit() {
   gElCanvas = document.getElementById('my-canvas')
   gCtx = gElCanvas.getContext('2d')
   renderGallery()
+  addListeners()
 
 
 }
+
+
+function addListeners() {
+  addMouseListeners()
+  addTouchListeners()
+  //Listen for resize ev
+
+}
+
 window.addEventListener('resize', () => {
   renderMeme()
 
@@ -36,9 +48,9 @@ function loadImageFromInput(ev, onImageReady) {
 
 }
 
-function renderImg(img) {
-  gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-}
+// function renderImg(img) {
+//   gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+// }
 
 
 
@@ -74,7 +86,9 @@ function renderMeme() {
   elImg.src = meme.selectedImgUrl
   elImg.onload = () => {
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+
     drawText()
+
 
 
   }

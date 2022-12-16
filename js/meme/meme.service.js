@@ -107,7 +107,7 @@ function createMeme(id, url) {
     selectedLineIdx: 0,
     lines: [
       {
-        txt: '',
+        txt: 'hello',
 
         size: 30,
         align: 'center',
@@ -124,7 +124,8 @@ function createMeme(id, url) {
         color: 'white',
         stroke: 'black',
         font: 'Impact',
-        pos: { x: gElCanvas.width / 2, y: gElCanvas.height - 50 }
+        pos: { x: gElCanvas.width / 2, y: gElCanvas.height - 50 },
+        isDrag: false
       }
     ]
   }
@@ -132,6 +133,9 @@ function createMeme(id, url) {
 
 function getMeme() {
   return gMeme
+}
+function gText() {
+  return gMeme.lines[gMeme.selectedLineIdx]
 }
 function lineText(textVal) {
   gMeme.lines[gMeme.selectedLineIdx].txt = textVal

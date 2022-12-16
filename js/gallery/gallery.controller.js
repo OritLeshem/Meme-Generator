@@ -14,5 +14,11 @@ function onImgSelect(imgId, imgUrl) {
   createMeme(imgId, imgUrl)
   gMeme.selectedImgId = selectedImg.id
   gMeme.selectedImgUrl = selectedImg.url
+  elController = document.querySelector('.control-box')
+  elController.hidden = false
+  ElCanvas = document.querySelector('.canvas-container')
+  ElCanvas.hidden = false
+  elGallery = document.querySelector('.gallery-container')
+  elGallery.style.display = 'none'
   renderMeme()
 }
