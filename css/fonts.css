@@ -38,6 +38,6 @@
 .share::before{
   content: "\f064";
 }
-.file::before{
+/* .file::before{
   content: "\f15b";
-}
+} */

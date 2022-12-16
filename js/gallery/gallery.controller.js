@@ -22,5 +22,7 @@ function onImgSelect(imgId, imgUrl) {
   ElCanvas.hidden = false
   elGallery = document.querySelector('.gallery-container')
   elGallery.style.display = 'none'
+  var elSearch = document.querySelector('.search-container')
+  elSearch.style.display = 'none'
   renderMeme()
 }

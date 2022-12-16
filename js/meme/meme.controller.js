@@ -17,20 +17,20 @@ function onInit() {
 }
 
 
-function addListeners() {
-  addMouseListeners()
-  addTouchListeners()
-  //Listen for resize ev
+// function addListeners() {
+//   addMouseListeners()
+//   addTouchListeners()
+//   //Listen for resize ev
 
-}
+// }
 
-window.addEventListener('resize', () => {
-  renderMeme()
+// window.addEventListener('resize', () => {
+//   renderMeme()
 
-  resizeCanvas()
-  renderGallery()
+// resizeCanvas()
+//   renderGallery()
 
-})
+// })
 //1
 function onImgInput(ev) {
   loadImageFromInput(ev, renderImg)
@@ -70,13 +70,13 @@ function onUploadImg() {
 
 
 
-function resizeCanvas() {
-  const elContainer = document.querySelector('.canvas-container')
-  // Note: changing the canvas dimension this way clears the canvas
-  gElCanvas.width = elContainer.offsetWidth - 20
-  // Unless needed, better keep height fixed.
-  // gElCanvas.height = elContainer.offsetHeight
-}
+// function resizeCanvas() {
+//   const elContainer = document.querySelector('.canvas-container')
+//   // Note: changing the canvas dimension this way clears the canvas
+//   gElCanvas.width = elContainer.offsetWidth - 20
+//   // Unless needed, better keep height fixed.
+//   // gElCanvas.height = elContainer.offsetHeight
+// }
 // RENDER MEME
 
 function renderMeme() {

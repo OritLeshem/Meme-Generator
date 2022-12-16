@@ -11,10 +11,11 @@ function addListeners() {
   addMouseListeners()
   addTouchListeners()
 
-  window.addEventListener('resize', () => {
-    resizeCanvas()
-    renderMeme()
-  })
+  // window.addEventListener('resize', () => {
+  //   resizeCanvas()
+
+  // })
+  renderMeme()
 }
 
 function isTextClicked(clickedPos) {
