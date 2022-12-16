@@ -1,8 +1,9 @@
 'use strict'
 
-let gSelectedImg = {}
+
 var gImgs
 var gMeme
+var gSelectedLineIdx
 
 gImgs = [
   {
@@ -104,10 +105,11 @@ function createMeme(id, url) {
   gMeme = {
     selectedImgId: id,
     selectedImgUrl: url,
+    urlForSave: '',
     selectedLineIdx: 0,
     lines: [
       {
-        txt: 'hello',
+        txt: 'your text here',
         size: 30,
         align: 'center',
         color: 'white',
@@ -125,9 +127,20 @@ function createMeme(id, url) {
         font: 'Impact',
         pos: { x: gElCanvas.width / 2, y: gElCanvas.height - 50 },
         isDrag: false
+      },
+      {
+        txt: '',
+        size: 30,
+        align: 'center',
+        color: 'white',
+        stroke: 'black',
+        font: 'Impact',
+        pos: { x: gElCanvas.width / 2, y: gElCanvas.height / 2 },
+        isDrag: false
       }
     ]
   }
+  gSelectedLineIdx = gMeme.selectedLineIdx
 }
 
 function getMeme() {
@@ -156,15 +169,12 @@ function setFont(elFontPicker) {
 }
 
 function swichLines() {
-  if (gMeme.selectedLineIdx === 0) {
-    // console.log(gMeme.selectedLineIdx)
-    gMeme.selectedLineIdx = 1
-    // console.log('1')
-  }
-  else {
-    gMeme.selectedLineIdx = 0
-    // console.log('0')
-  }
+  if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1
+  else if (gMeme.selectedLineIdx === 1) gMeme.selectedLineIdx = 2
+  else gMeme.selectedLineIdx = 0
+  gSelectedLineIdx = gMeme.selectedLineIdx
+  elInputText.placeholder = `Text Here ${gSelectedLineIdx + 1}`
+
 }
 
 // DOWNLOAD CANVAS

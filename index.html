@@ -19,7 +19,9 @@
       <ul>
         <li><a class="link" href="">Gallery</a> </li>
         <li><a class="link" href="">Memes</a> </li>
-        <li><a class="link" href="">About</a> </li>
+        <li>
+          <button class="btn-link" onclick="renderSavedMemes() ">Saved</button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -27,6 +29,7 @@
     <input class="search" type="text" placeholder="search">
   </div>
   <div class="gallery-container main-layout"></div>
+  <div class="gallery-saved-container"></div>
 
 
 
@@ -41,7 +44,7 @@
     <div class="control-box main-layout" hidden>
       <!-- FIRST ROW  INPUT|  -------------------------------------->
       <div class="input-grid">
-        <input class="input-text" type="text" placeholder="Text Here" oninput="onAddText()">
+        <input class="input-text" type="text" oninput="onAddText()">
       </div>
 
       <!-- SECOND ROW  +| DOWN| UP|SWITCH| DELETE -------------------------------------->
@@ -66,12 +69,12 @@
         </select>
         <input class="controller font-color" type="color" id="color" name="color" value="#ffffff"
           oninput="onColorPicker()" />
-        <button class="controller" onclick="onChangeFontSize(3)">+A</button>
+        <button class="controller" onclick="renderSavedMemes()">+A</button>
       </div>
 
       <!-- FIFTH ROW  SAVE |SHARE| CLEAR-------------------------------------->
       <div class="share-container">
-        <button class="controller fa save"></button>
+        <button class="controller fa save" onclick="onSavedMeme()"></button>
         <button class="controller fa share" onclick="onUploadImg()"></button>
         <button class="controller fa upload" onclick="onUploadImg()"></button>
         <a class="controller fa download" href="#" onclick="downloadCanvas(this)" download="my-img"></a>
@@ -84,10 +87,20 @@
 
   </div>
   <footer class=" footer-container main-layout full"> Orit Leshem</footer>
+
   <script src="./js/meme/meme.service.js"></script>
   <script src="./js/meme/meme.controller.js"></script>
   <script src="./js/meme/drag-text.js"></script>
-  <script src="./js/gallery//gallery.controller.js"></script>
+  <script src="./js/gallery/gallery.controller.js"></script>
+  <script src="./js/savedMeme/saved.service.js"></script>
+  <script src="./js/savedMeme/saved.controller.js"></script>
+  <script src="./js/storage.service.js"></script>
+
+
+
+
+
+
 
 </body>
 

@@ -12,6 +12,8 @@ function onImgSelect(imgId, imgUrl) {
   var images = getImages()
   var selectedImg = images.find(img => (img.id === imgId))
   createMeme(imgId, imgUrl)
+  elInputText.placeholder = `Text Here ${gSelectedLineIdx + 1}`
+
   gMeme.selectedImgId = selectedImg.id
   gMeme.selectedImgUrl = selectedImg.url
   var elController = document.querySelector('.control-box')
@@ -24,5 +26,7 @@ function onImgSelect(imgId, imgUrl) {
   elGallery.style.display = 'none'
   var elSearch = document.querySelector('.search-container')
   elSearch.style.display = 'none'
+  var elSavedGallery = document.querySelector('.gallery-saved-container')
+  elSavedGallery.style.display = 'none'
   renderMeme()
 }
