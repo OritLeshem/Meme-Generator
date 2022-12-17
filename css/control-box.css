@@ -116,7 +116,7 @@ width: 100%;
 /* height: 100vh; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content:stretch;
   align-items: center;
   padding-top:0 ;
 }
@@ -133,13 +133,13 @@ width: 100%;
   border-radius: 10px;
   margin-right: 10px;
   text-align: center;
-  height: 3rem;
+  height: 2.1rem;
   width: 8.5rem;
   border: .2rem solid black;
 }
 .controller {
-  width:2rem;
-  height: 2rem;
+  width:2.5rem;
+  height: 2.5rem;
   border: .2rem solid black;
   border-radius: .5rem;
   margin: 0.5rem 0.4rem;
