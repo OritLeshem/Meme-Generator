@@ -56,9 +56,9 @@
       <div class=" font-container">
         <button class="controller font-controller" onclick="onChangeFontSize(-3)">-A</button>
         <button class="controller font-controller" onclick="onChangeFontSize(3)">+A</button>
-        <button class="controller font-controller fa align-left" onclick="onChangeAlign('left')"></button>
-        <button class="controller font-controller fa align-right" onclick="onChangeAlign('right')"></button>
-        <button class="controller font-controller fa align-center" onclick="onChangeAlign('center')"></button>
+        <button class="controller font-controller fas align-left" onclick="onChangeAlign('left')"></button>
+        <button class="controller font-controller fas align-right" onclick="onChangeAlign('right')"></button>
+        <button class="controller font-controller fas align-center" onclick="onChangeAlign('center')"></button>
       </div>
       <!-- FORTH ROW  FONT PICKER| A| COLOR PICKER -------------------------------------->
       <div class="font-picker-container ">
@@ -73,12 +73,12 @@
 
       <!-- FIFTH ROW  SAVE |SHARE| CLEAR-------------------------------------->
       <div class="share-container">
-        <button class="controller fa save"></button>
-        <button class="controller fa share" onclick="onUploadImg()"></button>
-        <button class="controller fa upload" onclick="onUploadImg()"></button>
-        <a class="controller fa download" href="#" onclick="downloadCanvas(this)" download="my-img"></a>
-        <input class="controller fa file" type="file" class="file-input btn" name="image"
-          onchange="onImgInput(event)" />
+        <button class="controller fas save"></button>
+        <button class="controller fas share" onclick="onUploadImg()"></button>
+        <button class="controller fas upload" onclick="onUploadImg()"></button>
+        <a class="controller fas download" href="#" onclick="downloadCanvas(this)" download="my-img"></a>
+        <!-- <input class="controller fas file" type="file" class="file-input btn" name="image"
+          onchange="onImgInput(event)" /> -->
 
       </div>
     </div>
@@ -92,6 +92,7 @@
   <script src="./js/meme/drag-text.js"></script>
   <script src="./js/gallery/gallery.controller.js"></script>
   <!-- <script src="./js/savedMeme/saved.service.js"></script> -->
+  <script src="./js/search.service.js"></script>
 
 
 
