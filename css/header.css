@@ -1,8 +1,8 @@
 header{
   /* background-color: var(--gbgc); */
-  background-color: pink;
+  background-color: rgb(255, 200, 0,0.5) ;
 
-  border:var(--gborder);
+  /* border:var(--gborder); */
   box-shadow: var(--gshadow);
 }
 nav{
@@ -35,21 +35,27 @@ nav ul li a{
 nav ul li a:hover{
   padding-top:5rem;
   padding-bottom: 5rem;
-  color:var(--ghover-border);
+  color:var(--gbgc);
 }
 .btn-link{
   
 }
 .search-container{
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding-top: 3rem;
   height: 10rem;
   text-align: center;
 }
+/* .word-box{
+  height: 150px;
+  width: 400px;
+  background-color:#ffc600 ;
+} */
 .search{
   font-size: 1.5rem;
+  margin-left: 1.5rem;
   width: 20rem;
   height: 5rem;
   background-color: var(--gbgc);

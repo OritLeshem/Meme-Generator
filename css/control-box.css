@@ -87,6 +87,7 @@
   text-shadow: 0 0 .5rem black;
   cursor: pointer;
 }
+
 .controller:hover {
   transform: scale(1.1);
   border-color:var(--ghover-border);
@@ -139,4 +140,5 @@
   margin: 0.5rem 0.4rem;
   font-size: 0.8rem;
 }
+
 }

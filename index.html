@@ -24,7 +24,8 @@
     </nav>
   </header>
   <div class="search-container">
-    <input class="search" type="text" placeholder="search">
+    <!-- <div class="word-box"></div> -->
+    <input class="search" type="text" oninput="renderGallery()" placeholder="search">
     <button class="controller fas save" onclick="renderSavedMemes()"></button>
   </div>
   <div class="gallery-container main-layout"></div>
@@ -71,6 +72,7 @@
         <button class="controller">+A</button>
       </div>
 
+
       <!-- FIFTH ROW  SAVE |SHARE| CLEAR-------------------------------------->
       <div class="share-container">
         <button class="controller fas save"></button>
@@ -92,8 +94,8 @@
   <script src="./js/meme/drag-text.js"></script>
   <script src="./js/gallery/gallery.controller.js"></script>
   <!-- <script src="./js/savedMeme/saved.service.js"></script> -->
-  <script src="./js/search.service.js"></script>
-  <script src="./js/test.js"></script>
+  <!-- <script src="./js/search.service.js"></script> -->
+  <!-- <script src="./js/test.js"></script> -->
 
 
 

@@ -6,7 +6,7 @@ canvas{
   max-width: 48vw;
   margin-right: 2rem;
   background-color: rgb(209, 206, 206);
-  border: var(--gborder);
+  /* border: var(--gborder); */
 }
 
 
@@ -14,7 +14,7 @@ canvas{
 
 @media (max-width:1000px){
 .canvas-container{
-  border: var(--gborder);
+  /* border: var(--gborder); */
 
 }
 canvas{
