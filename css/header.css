@@ -1,5 +1,7 @@
 header{
-  background-color: var(--gbgc);
+  /* background-color: var(--gbgc); */
+  background-color: pink;
+
   border:var(--gborder);
   box-shadow: var(--gshadow);
 }

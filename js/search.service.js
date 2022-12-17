@@ -1,20 +1,20 @@
-console.log('hello from search')
-var gkeyWords = []
-// gImgs.forEach(img => img.keywords.forEach(word => gkeyWords.push(word)))
+// console.log('hello from search')
+// var gkeyWords = []
+// // ggImgs.forEach(img => img.keywords.forEach(word => gkeyWords.push(word)))
+// // console.log(gkeyWords)
+// function wordc() {
+//   for (let i = 0; i < ggImgs.length - 1; i++) {
+//     for (let k = 0; k < ggImgs[i].keywords.length - 1; k++) {
+//       let word = ggImgs[i][k]
+//       console.log(word)
+//       gkeyWords.push(word)
+//     }
+//   }
+// }
 // console.log(gkeyWords)
-function wordc() {
-  for (let i = 0; i < gImgs.length - 1; i++) {
-    for (let k = 0; k < gImgs[i].keywords.length - 1; k++) {
-      let word = gImgs[i][k]
-      console.log(word)
-      gkeyWords.push(word)
-    }
-  }
-}
-console.log(gImgs)
 
-var res = wordc()
-console.log(res)
+// var res = wordc()
+// console.log(res)
 // var wordsCounter = gkeyWords.reduce((acc, curr) => {
 //   if (!acc[curr]) acc[curr] = 0
 //   else acc[curr]++
@@ -22,24 +22,36 @@ console.log(res)
 // }, [])
 
 
-var res = countWordApperances()
-function countWordApperances() {
-  var wordsCountMap = {}
-  for (var i = 0; i < gkeyWords.length; i++) {
-    var currWord = gkeyWords[i]
-    wordsCountMap[currWord] = wordsCountMap[currWord] ? ++wordsCountMap[currWord] : 1
+// var res = countWordApperances()
+// function countWordApperances() {
+//   var wordsCountMap = {}
+//   for (var i = 0; i < gkeyWords.length; i++) {
+//     var currWord = gkeyWords[i]
+//     wordsCountMap[currWord] = wordsCountMap[currWord] ? ++wordsCountMap[currWord] : 1
+//   }
+
+//   return wordsCountMap
+// }
+// console.log(res)
+// var orit = [{
+//   id: 1,
+//   keywords: ['trump', 'akward']
+// }]
+console.log(ggImgs)
+
+var ggImgs = [
+  {
+    id: 1,
+    url: 'meme-imgs/1.jpg',
+    keywords: ['trump', 'akward'],
+  },
+  {
+    id: 2,
+    url: 'meme-imgs/2.jpg',
+    keywords: ['animal', 'dog']
   }
 
-  return wordsCountMap
-}
-console.log(res)
-var orit = [{
-  id: 1,
-  keywords: ['trump', 'akward']
-}]
-console.log(gImgs)
-
-
+]
 
 
 
