@@ -33,7 +33,8 @@ function addListeners() {
 function isTextClicked(clickedPos) {
   // const pos = {}
   var elGtext = {}
-  elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 50) && (Math.abs(clickedPos.y - el.pos.y) <= 25)))
+  // elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 50) && (Math.abs(clickedPos.y - el.pos.y) <= 25)))
+  elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 100) && (Math.abs(clickedPos.y - el.pos.y) <= 50)))
 
   console.log(elGtext)
   if (elGtext >= 0) {
