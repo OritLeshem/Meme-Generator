@@ -16,15 +16,15 @@ function onInit() {
 }
 function renderMeme() {
   var meme = getMeme()
+  console.log(meme)
   gCtx.beginPath()
   const elImg = new Image() // Create a new html img element
-  elImg.src = meme.selectedImgUrl
+  if (meme) elImg.src = meme.selectedImgUrl
   elImg.onload = () => {
     gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
     drawText()
   }
 }
-
 
 function onAddText(fromButtonAdd) {
   getMeme()
@@ -87,25 +87,46 @@ function drawText() {
   })
 }
 
+// function onImgInput(ev) {
+//   loadImageFromInput(ev, renderImg)
+// }
+// function renderImg(img) {
+//   // Draw the img on the canvas
+//   gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+// }
+// function loadImageFromInput(ev, onImageReady) {
+//   const reader = new FileReader()
+//   reader.onload = (event) => {
+//     let img = new Image()
+//     img.src = event.target.result
+//     img.onload = () => onImageReady(img)
+//   }
+//   reader.readAsDataURL(ev.target.files[0])
+// }
+
 function onImgInput(ev) {
   loadImageFromInput(ev, renderImg)
 }
 
+// CallBack func will run on success load of the img
 function loadImageFromInput(ev, onImageReady) {
   const reader = new FileReader()
+  // After we read the file
   reader.onload = (event) => {
-    let img = new Image()
-    img.src = event.target.result
+    let img = new Image() // Create a new html img element
+    img.src = event.target.result // Set the img src to the img file we read
+    // Run the callBack func, To render the img on the canvas
     img.onload = () => onImageReady(img)
   }
-  reader.readAsDataURL(ev.target.files[0])
+  reader.readAsDataURL(ev.target.files[0]) // Read the file we picked
 }
 
-// CLEAR CANVAS
-function clearCanvas() {
-  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+function renderImg(img) {
+  // Draw the img on the canvas
+  gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
+//UPLOAD IMG
 function onUploadImg() {
   const imgDataUrl = gElCanvas.toDataURL('image/jpeg') // Gets the canvas content as an image format
 
@@ -132,3 +153,8 @@ function onUploadImg() {
 // resizeCanvas()
 //   renderGallery()
 // })
+
+// CLEAR CANVAS
+function onClearCanvas() {
+  gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+}

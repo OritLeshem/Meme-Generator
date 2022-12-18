@@ -30,11 +30,26 @@ function addListeners() {
 //   else return false
 
 // }
-function isTextClicked(clickedPos) {
+// function isTextClicked(clickedPos,ev) {
+//   // const pos = {}
+//   var elGtext = {}
+//   // elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 50) && (Math.abs(clickedPos.y - el.pos.y) <= 25)))
+//   elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 200) && (Math.abs(clickedPos.y - el.pos.y) <= 100)))
+
+//   console.log(elGtext)
+//   if (elGtext >= 0) {
+//     gMeme.selectedLineIdx = elGtext
+//     gIsDrag = true
+//     return true
+//   } else return false
+
+// }
+function isTextClicked(clickedPos, ev) {
   // const pos = {}
   var elGtext = {}
-  // elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 50) && (Math.abs(clickedPos.y - el.pos.y) <= 25)))
-  elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 100) && (Math.abs(clickedPos.y - el.pos.y) <= 50)))
+  if (TOUCH_EVS.includes(ev.type)) elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 200) && (Math.abs(clickedPos.y - el.pos.y) <= 100)))
+  else elGtext = gMeme.lines.findIndex((el) => ((Math.abs(clickedPos.x - el.pos.x) <= 50) && (Math.abs(clickedPos.y - el.pos.y) <= 25)))
+
 
   console.log(elGtext)
   if (elGtext >= 0) {
@@ -58,7 +73,7 @@ function addTouchListeners() {
 
 function onDown(ev) {
   const pos = getEvPos(ev)
-  if (!isTextClicked(pos)) return
+  if (!isTextClicked(pos, ev)) return
   gStartPos.x = pos.x
   gStartPos.y = pos.y
   document.body.style.cursor = 'grabbing'

@@ -107,9 +107,9 @@ function getImages() {
   for (var i = 0; i < imgForFilter.length; i++) {
     var res = imgForFilter[i].keywords.filter(word => word.includes(val))
     if (res.length > 0) gFilter.push(imgForFilter[i])
-    console.log(res, res.length, i)
+    // console.log(res, res.length, i)
   }
-  console.log(gFilter)
+  // console.log(gFilter)
   if (gFilter.length > 0) return gFilter
   else return imgForFilter
 
@@ -117,8 +117,9 @@ function getImages() {
 function createMeme(id, url) {
   gMeme = {
     selectedImgId: id,
+
     selectedImgUrl: url,
-    urlForSave: '',
+    urlForSave: url,
     selectedLineIdx: 0,
     lines: [
       {
@@ -191,7 +192,7 @@ function swichLines() {
 }
 
 // DOWNLOAD CANVAS
-function downloadCanvas(elLink) {
+function onDownloadCanvas(elLink) {
   const data = gElCanvas.toDataURL()
   elLink.href = data
 }

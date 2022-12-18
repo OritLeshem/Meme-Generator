@@ -19,7 +19,7 @@
       <ul>
         <li><a class="link" href="">Gallery</a> </li>
         <li><a class="link" href="">Memes</a> </li>
-        <li> <a class="link" href="">About</a> </li>
+        <li> <a class="link" onclick="onRenderSavedMemes(event)" href="">Saved</a> </li>
       </ul>
     </nav>
   </header>
@@ -51,7 +51,7 @@
       <div class="input-move">
         <button class="controller" onclick="onAddText(1)">+</button>
         <button class="controller fas arrow" onclick="onSwitchLines()"></button>
-        <button class="controller fas trash" onclick="clearCanvas()"></button>
+        <button class="controller fas trash" onclick="onClearCanvas()"></button>
       </div>
       <!-- THIRD ROW  A+| A-| LEFT| RIGHT|CENTER -------------------------------------->
       <div class=" font-container">
@@ -69,16 +69,16 @@
         </select>
         <input class="controller font-color" type="color" id="color" name="color" value="#ffffff"
           oninput="onColorPicker()" />
-        <button class="controller">+A</button>
+        <!-- <button class="controller" onclick="onRenderSavedMemes()">S</button> -->
       </div>
 
 
       <!-- FIFTH ROW  SAVE |SHARE| CLEAR-------------------------------------->
       <div class="share-container">
-        <button class="controller fas save"></button>
+        <button class="controller fas save" onclick="onSavedMeme()"></button>
         <button class="controller fas share" onclick="onUploadImg()"></button>
-        <button class="controller fas upload" onclick="onUploadImg()"></button>
-        <a class="controller fas download" href="#" onclick="downloadCanvas(this)" download="my-img"></a>
+        <button class="controller fas upload" onclick="onImgInput()"></button>
+        <a class="controller fas download" href="#" onclick="onDownloadCanvas(this)" download="my-img"></a>
 
 
       </div>
@@ -87,12 +87,13 @@
 
   </div>
   <footer class=" footer-container main-layout full"> Orit Leshem</footer>
-
+  <script src="./js/savedMeme/saved.service.js"></script>
   <script src="./js/meme/meme.service.js"></script>
   <script src="./js/meme/meme.controller.js"></script>
   <script src="./js/meme/drag-text.js"></script>
   <script src="./js/gallery/gallery.controller.js"></script>
-  <!-- <script src="./js/savedMeme/saved.service.js"></script> -->
+  <script src="./js/utils.js"></script>
+
 
 
 
