@@ -15,6 +15,22 @@ body{
   background-color:var(--color1);
 }
 :root{
+  
+  --color1:#f6eff7;/*body*/
+  /*--color1:#5f6368;/*body*/
+  --color2:#ffffff;
+  --color3:#d8d8d8;
+  --gbgc: rgba(0,0,0,0.4);
+  --gborder: .4rem solid black;
+  --gbradius:.5rem;
+  --gtransition: all .07s ease;
+  --gcolor: white;
+  --gshadow:0 0 .5rem black;
+  --ghover-border:#f515ee;
+  --gbox-shadow: 0 0 1rem #ec63e8;
+  --gtransform:scale(1.1);
+}
+/* :root{
   --color1:#5f6368;
   --color2:#ffffff;
   --color3:#d8d8d8;
@@ -27,4 +43,4 @@ body{
   --ghover-border:#ffc600;
   --gbox-shadow: 0 0 1rem #ffc600;
   --gtransform:scale(1.1);
-}
+} */

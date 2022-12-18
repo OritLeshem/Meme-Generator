@@ -1,6 +1,6 @@
 header{
-  /* background-color: var(--gbgc); */
-  background-color: rgb(255, 200, 0,0.5) ;
+  background-color: var(--ghover-border);
+  /* background-color: rgb(255, 200, 0,0.5) ; */
 
   /* border:var(--gborder); */
   box-shadow: var(--gshadow);
@@ -66,8 +66,8 @@ nav ul li a:hover{
 }
   .search:hover{
   transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
+  border-color: var(--ghover-border);
+  box-shadow: var(--gbox-shadow);
 }
 @media (max-width:1000px){
   nav{
