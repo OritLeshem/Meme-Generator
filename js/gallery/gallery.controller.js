@@ -1,6 +1,7 @@
 console.log("gallery controller")
 
 function renderGallery() {
+
   var imgs = getImages()
   var strHTML = imgs.map((img) => {
     return `<div onclick="onImgSelect(${img.id},'${img.url}')"><img  class="img-in-gallery"src="${img.url}"></div>`

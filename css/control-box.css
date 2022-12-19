@@ -29,11 +29,6 @@
   border: var(--gborder);
   border-radius: var(--gbradius);
 }
-.input-text::placeholder{
-  color:white;
-  opacity: 0.8;
-  
-}
 .input-text:hover{
   transform: scale(1.1);
   border-color:var(--ghover-border);
