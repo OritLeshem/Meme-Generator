@@ -13,7 +13,6 @@ function onImgSelect(imgId, imgUrl) {
   var selectedImg = images.find(img => (img.id === imgId))
   createMeme(imgId, imgUrl)
   elInputText.placeholder = `Text Here ${gSelectedLineIdx + 1}`
-
   gMeme.selectedImgId = selectedImg.id
   gMeme.selectedImgUrl = selectedImg.url
   var elController = document.querySelector('.control-box')
