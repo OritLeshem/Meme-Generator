@@ -59,13 +59,18 @@ nav ul li a:hover{
   margin-left: 1.5rem;
   width: 20rem;
   height: 5rem;
-  background-color: var(--gbgc);
-  color:var(--gcolor);
   border: var(--gborder);
+  color: var(--ghover-border);
+  background: white;
   border-radius: var(--gbradius);
 }
+.search::placeholder{
+  color: var(--ghover-border);
+
+
+}
   .search:hover{
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
   border-color: var(--ghover-border);
   box-shadow: var(--gbox-shadow);
 }

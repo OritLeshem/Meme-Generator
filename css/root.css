@@ -12,21 +12,21 @@ html{
 body{
   font-family:Arial, Helvetica, sans-serif;
   margin:0;
-  background-color:var(--color1);
+  background-color:var(--color2);
 }
 :root{
   
   --color1:#f6eff7;/*body*/
   /*--color1:#5f6368;/*body*/
-  --color2:#ffffff;
+  --color2:#fcfcfc;
   --color3:#d8d8d8;
   --gbgc: rgba(0,0,0,0.4);
-  --gborder: .4rem solid black;
+  --gborder: .1rem solid rgb(219, 216, 216);
   --gbradius:.5rem;
   --gtransition: all .07s ease;
   --gcolor: white;
   --gshadow:0 0 .5rem black;
-  --ghover-border:#b0e4f2;
+  --ghover-border:#1fabc0;
   --gbox-shadow: 0 0 0.5rem #99d3f3;
   /* --ghover-border:#f515ee;
   --gbox-shadow: 0 0 1rem #ec63e8; */
